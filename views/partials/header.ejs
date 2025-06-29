@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookList</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" 
+    crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lora&family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+  <div class="container-fluid">
+    <!-- Left: Title -->
+    <a class="navbar-brand fw-bold" href="/">BookList</a>
+
+    <!-- Right: Buttons in Forms -->
+    <div class="d-flex ms-auto gap-2">
+      <%if ( page === "new" ) {%>
+      <!-- View Books Button -->
+      <form action="/" method="GET">
+        <button type="submit" class="btn btn-outline-light">View Books</button>
+      </form>
+      <%} else if ( page === "home" ) {%>
+      <!-- New Book Button -->
+      <form action="/new" method="GET">
+        <button type="submit" class="btn btn-outline-success">New Book</button>
+      </form>
+      <%} else {%>
+        <!-- View Books Button -->
+      <form action="/" method="GET">
+        <button type="submit" class="btn btn-outline-light">View Books</button>
+      </form>
+      <!-- New Book Button -->
+      <form action="/new" method="GET">
+        <button type="submit" class="btn btn-outline-success">New Book</button>
+      </form>
+      <%}%>
+    </div>
+  </div>
+</nav>
+    

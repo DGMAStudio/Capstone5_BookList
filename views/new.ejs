@@ -1,0 +1,43 @@
+<%-include("partials/header.ejs")%>
+
+<section id="new-book-form" class="container my-5 px-5">
+  <h2 class="mb-4">Add a New Book</h2>
+
+  <form action="/new" method="POST" class="needs-validation" novalidate>
+    <div class="mb-3">
+      <label for="title" class="form-label fw-bold">Title</label>
+      <input type="text" class="form-control" id="title" name="title" required>
+      <div class="invalid-feedback">
+        Please enter the book title.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="summary" class="form-label fw-bold">Summary</label>
+      <textarea class="form-control" id="summary" name="summary" rows="5" required></textarea>
+      <div class="invalid-feedback">
+        Please provide a summary.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="author" class="form-label fw-bold">Author</label>
+      <input type="text" class="form-control" id="author" name="author" required>
+      <div class="invalid-feedback">
+        Please enter the author's name.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="rating" class="form-label fw-bold">Rating (0–10)</label>
+      <input type="number" class="form-control" id="rating" name="rating" min="0" max="10" step="1" required>
+      <div class="invalid-feedback">
+        Please enter a whole number between 0 and 10.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Publish Book</button>
+  </form>
+</section>
+
+<%-include("partials/footer.ejs")%>
